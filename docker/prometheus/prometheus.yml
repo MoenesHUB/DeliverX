@@ -1,0 +1,49 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: eureka-server
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['eureka-server:8761']
+
+  - job_name: config-server
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['config-server:8888']
+
+  - job_name: gateway
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['gateway:8090']
+
+  - job_name: assignment-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['assignment-service:8081']
+
+  - job_name: driver-client-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['driver-client-service:8082']
+
+  - job_name: vehicle-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['vehicle-service:8083']
+
+  - job_name: delivery-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['delivery-service:8084']
+
+  - job_name: package-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['package-service:8085']
+
+  - job_name: tracking-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ['tracking-service:8086']
